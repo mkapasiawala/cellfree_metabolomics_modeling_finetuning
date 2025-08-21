@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Submit this script with: sbatch test.sh
+
+#SBATCH --time=80:00:00   # how much time you want in hours:minutes:seconds
+#SBATCH --ntasks=28   # number of processor cores (i.e. tasks)
+#SBATCH --nodes=1   # number of nodes
+#SBATCH --mem-per-cpu=4G   # memory per CPU core
+#SBATCH -J "Fine_tuning_on_batch_4_all_mg_concs2_DAJMKMY"   # whatever job name
+#SBATCH --mail-user=mkapasia@caltech.edu   # email address to receive email on process end
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+
+
+# LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE (activate your environment and run the file)
+# source /home/mkapasia/Y/envs/activate modeling_3.12
+/home/mkapasia/anaconda3/envs/modeling_3.12/bin/python /resnick/groups/murray-biocircuits/mkapasia/Finetuning/Python_Scripts/Fine_tuning_on_batch_4_all_mg_concs2/Fine_tuning_on_batch_4_all_mg_concs2_DAJMKMY.py
